@@ -1,4 +1,4 @@
-// https://ironchef-team21.googlecode.com/git-history/75856e07bb89645d0e56820d6e79f8219a06bfb7/ironchef_team21/src/ImagePHash.java
+// https://github.com/bradmann/ironchef-team21/blob/master/ironchef_team21/src/ImagePHash.java
 
 function pHash(img){
 	var size = 32,
@@ -7,7 +7,7 @@ function pHash(img){
 	var canvas = document.createElement('canvas'),
 		ctx = canvas.getContext('2d');
 	
-	document.body.appendChild(canvas)
+	// document.body.appendChild(canvas);
 
 	/* 1. Reduce size. 
 	 * Like Average Hash, pHash starts with a small image. 
@@ -20,6 +20,7 @@ function pHash(img){
 	canvas.height = size;
 	// ctx.drawImage(img, 0, 0, size, size);
 	ctx.drawImage(img, 0, -size, size, size * 3);
+
 	var im = ctx.getImageData(0, 0, size, size);
 
 	/* 2. Reduce color. 
