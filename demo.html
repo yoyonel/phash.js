@@ -3,22 +3,46 @@
 <head>
 	<meta charset="utf-8">
 	<style>
-	.hover {
-		background-color: green;
-	}
 	img {
-		width: 300px;
+		max-width: 200px;
+		max-height: 200px;
+		margin: 5px;
 	}
-	div {
+	canvas {
+		margin: 5px;
+	}
+	#drop-area {
 		margin: 20px;
 		padding: 10px;
 		background: #c0ffee;
+		border: 2px dashed #ccc;
+		border-radius: 20px;
+		width: 480px;
+		font-family: sans-serif;
+		margin: 100px auto;
+		padding: 20px;
+		text-align: center;
+		color: gray;
+	}
+	#drop-area.highlight {
+		border-color: purple;
+	}
+	.hover {
+		background-color: #f5f2f0;
+	}
+	#spin {
+		width: 100%;
+	}
+	#uploaded-files {
+		width: 100%;
 	}
 	</style>
-	<script src="phash.js"></script>
+	<script async src="phash.js"></script>
 	<script src="demo.js"></script>
 </head>
 <body>
-	<input type="range" min="1" step="1" max="32" value="20" oninput="set_thresh(this.value)" style="width: 100%">
+	<div id="drop-area">Drop files here</div>
+	<input id="spin" type="range" min="1" step="1" max="32" value="20" oninput="set_thresh(this.value)">
+	<div id="uploaded-files"></div>
 </body>
 </html>
